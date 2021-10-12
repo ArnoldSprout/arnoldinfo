@@ -1,0 +1,118 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container-fluid">
+    <!--Start Landing page-->
+    <div class="row">
+        <div class="col-md-5">
+            <img class="img-fluid" src="~/images/Arnold.png" />
+          
+        </div>
+        <div class="col-md-6 text-center">
+            <div class="titles ">
+                <h1 class="title">Hi! My name is<n class="name ml-2"style="color: #4169E1;">Arnold</n>,</h1>
+                <h2 class="subtitle py-1">I am a Junior Software Developer.</h2>
+            </div>
+            <a class="btn btn-outline-primary text-capitalize touch" href="#reachout">get in touch</a>
+        </div>
+    </div>
+    <!--End Landing Page-->
+  <!--Start intro about me-->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="title-intro">
+                <h2 class="text-lead text-capitalize">a brief intro about what i do</h2>
+                <p>I am a developer who enjoys turning ideas into reality. I specialize in database driven applications, using various technologies such <strong>Java </strong> and <strong class="text-primary"> ASP.Net Core</strong></p>
+                <p> I am passionate about programming, hence, I also have a YouTube channel were I share what I have learned. The channel is steadily growing! Kindly check it out and hit the subscribe button as well as the notification bell icon so you don't miss out. Thank You!!</p>
+            </div>
+            <a class="btn btn-danger text-white" href="https://www.youtube.com/channel/UCDjT8Mpx4vOe-HrA1EakzhQ">YouTube Channel</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <img class="img-fluid" src="~/images/Arnold-2.png" />
+        </div>
+    </div>
+    
+<!--End Intro about me-->
+
+<!--Start projects-->
+    
+        <h1 class="project-title">some cool project</h1><br />
+        <form method="get">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search project by title e.g. quize" asp-for="SearchQuery" />
+                    <button type="submit" class="btn-group-sm">Search</button>
+                </div>
+               
+            </div>
+        </form>
+
+    <div class="row text-center py-2">
+     
+            <div class="col-md-2">
+                <h4>Title</h4>
+            </div>
+            <div class="col-md-2">
+                <h4>Language</h4>
+            </div>
+            <div class="col-md-4">
+                <h4>Discription</h4>
+            </div>
+            <div class="col-md-4">
+                <h4>Project link</h4>
+            </div>
+       
+    </div>
+    @foreach (var project in Model.Project_)
+            {
+                <div class="row text-center">
+                        <div class="col-md-2">
+                            <p class="project-title-2">@project.Title</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>@project.Type</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p>@project.Discription</p>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="@project.Link">Go to Link</a>
+                        </div>
+                   
+                </div>
+            }
+  
+    <!--End Projects-->
+    <!--Start Contact-->
+ <div class="contact" id="reachout">
+  <div class="row text-center">
+    <div class="col-md-4">
+        <h5>Message</h5>
+        <hr class="contact-line"/>
+    </div>
+    <div class="col-md-4">
+        <h5>Contact</h5>
+        <hr class="contact-line"/>
+    </div>
+    <div class="col-md-4">
+        <h5>Social Media</h5>
+        <hr class="contact-line"/>
+    </div>
+</div>
+    <div class="row justify-content-center text-center">
+        <div class="col-md-4 text-left">
+            I am eager to learn and work on exciting projects. I speak both business and programming; Kindly reach out if you have an idea you wish to see materialize. I am also open to a job offer.
+        </div>
+        <div class="col-md-4">
+            Email: <a mailto=learnwitharnold@gmail.com>learnwitharnold@gmail.com</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#" class="text-primary">twitter</a> | <a href="#" class="text-danger">YouTube</a> | <a href="#" class="text-primary">LinkedIn</a>
+        </div>
+    </div>
+</div>
+    <!--End Contact-->
+</div>

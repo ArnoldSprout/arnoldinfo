@@ -1,0 +1,15 @@
+﻿@page "{projectId:int}";
+@model Portfolio.Pages.Shared.DetailModel
+@{
+    ViewData["title"] = "Detail";
+}
+<h1 class="text-center">@Model.Project_.Title</h1>
+<div class="container-fluid justify-content-center">
+    <div>Project Id # @Model.Project_.Id</div>
+    <div>Language Used: @Model.Project_.Type</div>
+    <div>Discription: @Model.Project_.Discription</div>
+    <div>
+        <a href=@Model.Project_.Link>Link To the Project</a>
+    </div>
+    <a asp-page="./Index" class="btn btn-outline-primary">Back to Projects</a>
+</div>
